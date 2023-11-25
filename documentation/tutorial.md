@@ -162,7 +162,7 @@ El método simplex se aplica del mismo modo a los problemas de minimización, un
 
 * Convirtiendo el problema de minimización en uno de maximización: $Min~Z = -Max(-Z)$ de modo que se resuelve el problema $Maximizar(-Z)$ con las restricciones dadas, y una vez se obtiene el valor máximo, hay que cambiarle el signo para obtener el valor mínimo de $Z$.
 
-#### Ejemplo 2.
+#### Ejemplo 2. 
 
 $$Minimizar~Z=-4x+2y$$
 
@@ -172,9 +172,60 @@ $$4x-y \leq 10$$
 
 $$x,y \geq 0$$
 
-Usando $Min~Z=-4x+2y$ $= -Max~Z' = 4x-2y$ se resuelve el problema de maximizar la función objetivo $Z'$. El tableu inicial será de la siguiente forma:
+Usando $Min~Z=-4x+2y = -Max(Z') = 4x-2y$ se resuelve el problema de maximizar la función objetivo $Z'$. El tableu inicial será de la siguiente forma:
 |     |$x_1$|$x_2$| sol |
 |-----|-----|-----|-----|
 |$y_1$|$-1$ |$3$  |$14$ |
 |$y_2$|$4$  |$-1$ |$10$ |
 |$Z$  |$4$  |$-2$ | $0$ |
+
+### Problema de ruta crítica.
+
+Para encontrar la **ruta crítica** se definen las variables binarias $X_ij$ donde $X_ij$ será igual a 1 si la actividad se presenta en la ruta crítica, o 0 de lo contrario. La amplitud de la ruta es la suma de la duración de las actividades en la trayectoria. De forma más formal, se buscará encontrar la trayectoria más larga desde el nodo 1 hasta el nodo final.
+
+Cada arco tiene dos funciones, una es representar una actividad, y la otra es definir la relación entre las actividades. Algunas veces es necesario agregar arcos que solo representen relaciones precedentes, estos arcos ficticios son representados por líneas punteadas. El único requerimiento que debe cumplirse en cada nodo es el siguiente:
+
+- Flujo que sale = Flujo que entra
+  
+Debido a esto, a cada nodo se le **suman sus posibles salidas** y se le restan **sus posibles entradas**, así se obtiene una ecuación por nodo. Además, al primer nodo se le debe sumar una unidad, mientras que al último se le resta una.
+
+#### Ejemplo 3.
+
+Se desea obtener la **ruta crítica** para el proceso de aserrío. En un aserradero se tiene como objetivo determinar el orden en el que se han de realizar las actividades que implica dicho proceso, de tal forma que se identifique cuales actividades pueden ser atrasadas sin afectar la duración del proyecto. Se tiene una red de nodos y arcos que representa los procesos que se realizarán:
+
+![red de nodos y arcos](image-3.png)
+
+Su planteamiento algebráico queda de la siguiente forma:
+
+$$Max~Z = 2X_12 + 3X_23 + 2X_24 + 0X_43 + 3.5X_35 + 2X_56 + X_67 + X_68 + 0X_87 + 2X_79 + X_910$$
+
+Sujeto a:
+- Nodo 1: $X_12 = 1$
+- Nodo 2: $X_23 + X_24 - X_12 = 0$
+- Nodo 3: $X_35 - X_23 - X_43 = 0$
+- Nodo 4: $X_43 - X_24 = 0$
+- Nodo 5: $X_56 - X_35 = 0$
+- Nodo 6: $X_67 + X_68 - X_56 = 0$
+- Nodo 7: $X_79 - X_67 - X_68 = 0$
+- Nodo 8: $X_87 - X_68 = 0$
+- Nodo 9: $X_910 - X_79 = 0$
+- Nodo 10: $-X_910=-1$
+- $X_i \geq 0$
+
+Se tiene el siguiente tableu ya puesto en un archivo CSV, en este caso, visualizado con Excel.
+
+![tableu ej3](image-4.png)
+
+Finalmente, se abre este archivo con el programa y al iniciar se obtiene el siguiente resultado:
+
+![sol ej3](image-5.png)
+
+Lo que nos da la conclusión:
+
+$$X_12, X_23, X_24, X_35, X_56, X_67, X_79, X_910 = 1$$
+$$X_43, X_68, X_87 = 0$$
+
+Es decir, la ruta crítica es la que pasa por los nodos indicados, de forma gráfica:
+
+![sol graf ej3](image-6.png)
+
