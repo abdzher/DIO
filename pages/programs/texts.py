@@ -1,11 +1,12 @@
 
 class Dialog():
     def __init__(self):
-        self.info1_title = "Que datos debo introducir?"
+        self.info1_title = "¿Qué datos debo introducir?"
         self.info1_info = """
-este programa está destinado a ilustrar de la mejor manera posible la solución de 
+Este programa está destinado a ilustrar de la mejor manera posible la solución de 
 poblemas de optimización llevando a cabo un simple pero efectivo algoritmo algebráico, 
 siempre partiendo del primer tableu del que parte el problema.
+
 A continuación se presentan las herramientas con las que puede resolver su tableu
 inicial. Si no tiene uno, revise la guía rápida para obtener rápidamente el suyo.
         """
@@ -14,7 +15,15 @@ inicial. Si no tiene uno, revise la guía rápida para obtener rápidamente el s
 
         self.comma_dial_title = "Añadir datos separados con comas y punto y coma"
         self.comma_info_title = "Ayuda para introducir datos"
-        self.comma_info_text = "Añade los datos con comas y punto y coma"
+        self.comma_info_text = """
+En el recuadro anterior puede escribir su tableu indicando con la coma un cambio 
+de celda, mientras que el punto y coma indica un salto de fila, por ejemplo:
+
+1, 2, 1, 430; 3, 0, 2, 460; 1, 4, 0, 420; -3, -2, -5, 0
+
+Recordar que pueden escribirse números y negativos con el guión corto "-",
+decimales con un punto o fracciones con un diagonal (5/9).
+        """
         
         # depricated
         self.ect_dial_title = "Añadir datos dados con planteamiento algebraico"
@@ -23,7 +32,15 @@ inicial. Si no tiene uno, revise la guía rápida para obtener rápidamente el s
         
         self.csv_dial_title = "Añadir datos dados en un archivo CSV"
         self.csv_info_title = "Ayuda para introducir CSV"
-        self.csv_info_text = "Añade el archivo formato CSV."
+        self.csv_info_text = """
+Se le pedirá elegir un archivo que debe ser estríctamente una tabla CSV. En las 
+celdas pueden escribirse números y negativos con el guión corto "-",
+decimales con un punto o fracciones con un diagonal (5/9).
+
+El tableu debe estar ubicado en el inicio de la tabla y puede el archivo puede
+ser modificado con excel pero teniendo cuidado del formato en que se guarda,
+para más información revisar el documento de ayuda.
+        """
         
         
         

@@ -242,8 +242,9 @@ async def main(page: ft.Page):
     # ================== APPBAR =======================
     appbar = ft.AppBar(
         leading = ft.Icon(ft.icons.TABLE_CHART),
+        #leading= ft.Image(src = "icon.ico"),
         leading_width=50,
-        title = ft.Text("Tableu Solver"),
+        title = ft.Text("DIO: Tableu Solver"),
         bgcolor = ft.colors.LIGHT_BLUE_700
     )
     
