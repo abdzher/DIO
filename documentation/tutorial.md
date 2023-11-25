@@ -165,8 +165,11 @@ El método simplex se aplica del mismo modo a los problemas de minimización, un
 #### Ejemplo 2.
 
 $$Minimizar Z=-4x+2y$$
+
 $$sujeto a -x+3y \leq 14$$
+
 $$4x-y \leq 10$$
+
 $$x,y \geq 0$$
 
 Usando $Min Z=-4x+2y= -Max Z' = 4x-2y$ se resuelve el problema de maximizar la función objetivo $Z'$.
