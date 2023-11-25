@@ -45,9 +45,9 @@ A partir de ahora usaremos a las $X_i$ para representar a nuestros juguetes, a l
 
 Lo que sigue es plantear las restricciones, en este caso, podemos ver que nuestro planteamiento está *sujeto a* no sobrepasar las limitaciones de cada tipo de operación, lo que se encuentra en la última columna de la tabla, además, la cantidad de minutos que se ocupa para cada tipo de juguete también se encuentra en la tabla, de esta forma llegamos a lo siguiente:
 
-- Tiempo máximo de la operación 1: $ X_1 + 2 X_2 + X_3 \leq 430$
-- Tiempo máximo de la operación 2: $ 3 X_1 + 0 X_2 + 2 X_3 \leq 460$ 
-- Tiempo máximo de la operación 2: $ X_1 + 4 X_2 + 0 X_3 \leq 420$
+- Tiempo máximo de la operación 1: $X_1 + 2 X_2 + X_3 \leq 430$
+- Tiempo máximo de la operación 2: $3 X_1 + 0 X_2 + 2 X_3 \leq 460$ 
+- Tiempo máximo de la operación 2: $X_1 + 4 X_2 + 0 X_3 \leq 420$
 - Restricción de no negatividad: $X_1, X_2 \geq 0$
 
 Esta última restricción es bastante obvia puesto que, en el mundo real, no podemos tener juguetes negativos.
@@ -56,10 +56,10 @@ Esta última restricción es bastante obvia puesto que, en el mundo real, no pod
 
 Estamos llegando a la recta final, lo que sigue ahora es realizar el tableu, el cual es una representación en forma de tabla de nuestro problema. Para poder plantearlo debemos partir de despejar nuestras ecuaciones de forma que las *variables de decisión* queden del lado izquierdo de la desigualdad, mientras que para la función objetivo $Z$ cambiaremos de signo todos sus valores:
 
-- $ Y_1: X_1 + 2 X_2 + X_3 \leq 430$
-- $ Y_2: 3 X_1 + 0 X_2 + 2 X_3 \leq 460$ 
-- $ Y_3: X_1 + 4 X_2 + 0 X_3 \leq 420$
-- $ Maximizar Z: -3 X_1 - 2 X_2 - 5 X_3 = 0 $
+- $Y_1: X_1 + 2 X_2 + X_3 \leq 430$
+- $Y_2: 3 X_1 + 0 X_2 + 2 X_3 \leq 460$ 
+- $Y_3: X_1 + 4 X_2 + 0 X_3 \leq 420$
+- $Maximizar Z: -3 X_1 - 2 X_2 - 5 X_3 = 0 $
 
 Lo que hace que nuestro **tableu** quede de la siguiente forma:
 
@@ -153,3 +153,20 @@ El programa está diseñado para manejar errores, desde haber escrito mal algo, 
 - El programa se cierra.
 
 En estos casos, favor de enviar un video recreando el error al contacto indicado, ayudará mucho a solucionar todos estos problemas.
+
+## Otros ejemplos.
+
+### Problemas de minimización.
+
+El método simplex se aplica del mismo modo a los problemas de minimización, una de las maneras de lograrlo es la siguiente:
+
+* Convirtiendo el problema de minimización en uno de maximización: $Min Z = -Max(-Z)$ de modo que se resuelve el problema $Maximizar(-Z)$ con las restricciones dadas, y una vez se obtiene el valor máximo, hay que cambiarle el signo para obtener el valor mínimo de $Z$.
+
+#### Ejemplo 2.
+
+$$Minimizar Z=-4x+2y$$
+$$sujeto a -x+3y \leq 14$$
+$$4x-y \leq 10$$
+$$x,y \geq 0$$
+
+Usando $Min Z=-4x+2y= -Max Z' = 4x-2y$ se resuelve el problema de maximizar la función objetivo $Z'$.
