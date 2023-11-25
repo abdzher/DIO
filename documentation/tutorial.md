@@ -14,7 +14,6 @@ Lo que este programa puede hacer:
 Lo que NO puede hacer este programa:
 - Dar la respuesta a la pregunta planteada del problema dado.
 - Encontrar la solución escribiendo el planteamiento algebráico.
-- Acomodar tu cuarto.
 
 ## ¿Cómo debo iniciar? 
 
