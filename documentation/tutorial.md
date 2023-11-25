@@ -36,7 +36,7 @@ Donde las tres columnas de enmedio indican el tiempo en producir cada tipo de ju
 ### Planteamiento algebráico.
 Ahora procedemos a algo muy importante, y es plantear nuestro problema en lenguaje matemático. Para empezar, ¿qué queremos hacer? en este ejemplo queremos que la ganancia sea la máxima posible, por lo que debemos **maximizar**, además, lo que queremos maximizar es el ingreso, por lo que podemos plantear esto como una combinación lineal de nuestros productos, por el ingreso de cada uno. Nuestra **función objetivo** será la siguiente:
 
-$$ Maximizar \medspace Z = 3 X_1 + 2 X_2 + 5 X_3 $$
+$$ Maximizar~Z = 3 X_1 + 2 X_2 + 5 X_3 $$
 
 A partir de ahora usaremos a las $X_i$ para representar a nuestros juguetes, a los que llamaremos *variables de decisión*, de tal forma que:
 - Tren = $X_1$.
@@ -59,7 +59,7 @@ Estamos llegando a la recta final, lo que sigue ahora es realizar el tableu, el 
 - $Y_1: X_1 + 2 X_2 + X_3 \leq 430$
 - $Y_2: 3 X_1 + 0 X_2 + 2 X_3 \leq 460$ 
 - $Y_3: X_1 + 4 X_2 + 0 X_3 \leq 420$
-- $Maximizar \medspace Z: -3 X_1 - 2 X_2 - 5 X_3 = 0 $
+- $Maximizar~Z: -3 X_1 - 2 X_2 - 5 X_3 = 0 $
 
 Lo que hace que nuestro **tableu** quede de la siguiente forma:
 
@@ -160,19 +160,19 @@ En estos casos, favor de enviar un video recreando el error al contacto indicado
 
 El método simplex se aplica del mismo modo a los problemas de minimización, una de las maneras de lograrlo es la siguiente:
 
-* Convirtiendo el problema de minimización en uno de maximización: $Min \medspace Z = -Max(-Z)$ de modo que se resuelve el problema $Maximizar(-Z)$ con las restricciones dadas, y una vez se obtiene el valor máximo, hay que cambiarle el signo para obtener el valor mínimo de $Z$.
+* Convirtiendo el problema de minimización en uno de maximización: $Min~Z = -Max(-Z)$ de modo que se resuelve el problema $Maximizar(-Z)$ con las restricciones dadas, y una vez se obtiene el valor máximo, hay que cambiarle el signo para obtener el valor mínimo de $Z$.
 
 #### Ejemplo 2.
 
-$$Minimizar \medspace Z=-4x+2y$$
+$$Minimizar~Z=-4x+2y$$
 
-$$sujeto \medspace a -x+3y \leq 14$$
+$$sujeto~a -x+3y \leq 14$$
 
 $$4x-y \leq 10$$
 
 $$x,y \geq 0$$
 
-Usando $Min \medspace Z=-4x+2y= -Max \medspace Z' = 4x-2y$ se resuelve el problema de maximizar la función objetivo $Z'$. El tableu inicial será de la siguiente forma:
+Usando $Min~Z=-4x+2y= -Max~Z' = 4x-2y$ se resuelve el problema de maximizar la función objetivo $Z'$. El tableu inicial será de la siguiente forma:
 |     |$x_1$|$x_2$| sol |
 |-----|-----|-----|-----|
 |$y_1$|$-1$ |$3$  |$14$ |
