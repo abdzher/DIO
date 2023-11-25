@@ -172,7 +172,7 @@ $$4x-y \leq 10$$
 
 $$x,y \geq 0$$
 
-Usando $Min~Z=-4X_1+2X_2 = -Max(Z') = 4X_1-2X_2 se resuelve el problema de maximizar la función objetivo $Z'$. El tableu inicial será de la siguiente forma:
+Usando $Min~Z=-4X_1+2X_2 = -Max(Z') = 4X_1-2X_2$ se resuelve el problema de maximizar la función objetivo $Z'$. El tableu inicial será de la siguiente forma:
 
 |     |$X_1$|$X_2$| sol |
 |-----|-----|-----|-----|
