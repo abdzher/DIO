@@ -172,12 +172,23 @@ $$4x-y \leq 10$$
 
 $$x,y \geq 0$$
 
-Usando $Min~Z=-4x+2y = -Max(Z') = 4x-2y$ se resuelve el problema de maximizar la función objetivo $Z'$. El tableu inicial será de la siguiente forma:
-|     |$x_1$|$x_2$| sol |
+Usando $Min~Z=-4X_1+2X_2 = -Max(Z') = 4X_1-2X_2 se resuelve el problema de maximizar la función objetivo $Z'$. El tableu inicial será de la siguiente forma:
+
+|     |$X_1$|$X_2$| sol |
 |-----|-----|-----|-----|
-|$y_1$|$-1$ |$3$  |$14$ |
-|$y_2$|$4$  |$-1$ |$10$ |
-|$Z$  |$4$  |$-2$ | $0$ |
+|$Y_1$|$-1$ |$3$  |$14$ |
+|$Y_2$|$4$  |$-1$ |$10$ |
+|$Z$  |$-4$  |$2$ | $0$ |
+
+Al final, la función objetivo se presenta en el tableu con $-4,2$, esto porque al plantear el tableu se cambia el signo de estos coeficientes. Finalmente podemos introducir los siguientes datos al programa:
+
+```-1, 3, 14; 4, -1, 10; -4, 2, 0```
+
+Lo que nos deja con el siguiente tableu final:
+
+![ej 2 solucion](image-7.png)
+
+El valor de la función objetivo prima es $Z'=10$, de modo que el valor mínimo de de la función Z es $Z=-10$, el cual se obtiene cuando los valores de las variables son $X_1=2.5$ y $X_2=0$.
 
 ### Problema de ruta crítica.
 
@@ -197,19 +208,19 @@ Se desea obtener la **ruta crítica** para el proceso de aserrío. En un aserrad
 
 Su planteamiento algebráico queda de la siguiente forma:
 
-$$Max~Z = 2X_12 + 3X_23 + 2X_24 + 0X_43 + 3.5X_35 + 2X_56 + X_67 + X_68 + 0X_87 + 2X_79 + X_910$$
+$$Max~Z = 2X_{12} + 3X_{23} + 2X_{24} + 0X_{43} + 3.5X_{35} + 2X_{56} + X_{67} + X_{68} + 0X_{87} + 2X_{79} + X_{910}$$
 
 Sujeto a:
-- Nodo 1: $X_12 = 1$
-- Nodo 2: $X_23 + X_24 - X_12 = 0$
-- Nodo 3: $X_35 - X_23 - X_43 = 0$
-- Nodo 4: $X_43 - X_24 = 0$
-- Nodo 5: $X_56 - X_35 = 0$
-- Nodo 6: $X_67 + X_68 - X_56 = 0$
-- Nodo 7: $X_79 - X_67 - X_68 = 0$
-- Nodo 8: $X_87 - X_68 = 0$
-- Nodo 9: $X_910 - X_79 = 0$
-- Nodo 10: $-X_910=-1$
+- Nodo 1: $X_{12} = 1$
+- Nodo 2: $X_{23} + X_{24} - X_{12} = 0$
+- Nodo 3: $X_{35} - X_{23} - X_{43} = 0$
+- Nodo 4: $X_{43} - X_{24} = 0$
+- Nodo 5: $X_{56} - X_{35} = 0$
+- Nodo 6: $X_{67} + X_{68} - X_{56} = 0$
+- Nodo 7: $X_{79} - X_{67} - X_{68} = 0$
+- Nodo 8: $X_{87} - X_{68} = 0$
+- Nodo 9: $X_{910} - X_{79} = 0$
+- Nodo 10: $-X_{910}=-1$
 - $X_i \geq 0$
 
 Se tiene el siguiente tableu ya puesto en un archivo CSV, en este caso, visualizado con Excel.
@@ -222,8 +233,9 @@ Finalmente, se abre este archivo con el programa y al iniciar se obtiene el sigu
 
 Lo que nos da la conclusión:
 
-$$X_12, X_23, X_24, X_35, X_56, X_67, X_79, X_910 = 1$$
-$$X_43, X_68, X_87 = 0$$
+$$X_{12}, X_{23}, X_{24}, X_{35}, X_{56}, X_{67}, X_{79}, X_{910} = 1$$
+
+$$X_{43}, X_{68}, X_{87} = 0$$
 
 Es decir, la ruta crítica es la que pasa por los nodos indicados, de forma gráfica:
 
