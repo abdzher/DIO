@@ -2,22 +2,23 @@
 
 ## Bienvenida.
 
-¡Hola! Sé bienvenido a este programa, esperamos que te sea útil. Como ya sabes, este programa está destinado a ilustrar de la mejor manera posible la solución de poblemas de optimización llevando a cabo un simple pero efectivo algoritmo algebráico, siempre partiendo del primer tableu del que parte el problema.
+¡Hola! Sé bienvenido a este programa, esperamos que te sea útil. Como ya sabes, este programa está destinado a ilustrar de la mejor manera posible la solución de poblemas de optimización llevando a cabo un simple pero efectivo algoritmo algebráico, siempre partiendo del primer tableau del que parte el problema.
 
 ## ¿Qué puedo hacer?
 
 Lo que este programa puede hacer:
-- Solucionar un problema de investigación de operaciones a partir del tableu inicial.
+- Solucionar un problema de investigación de operaciones a partir del tableau inicial.
 - Mostrar todas las iteraciones realizadas para llegar a la solución, como si se hubiera hecho el procedimiento a mano.
 - Personalizar los resultados, ya sea que estén escritos como fracciones, o que sean números con un determinado número de decimales.
 
 Lo que NO puede hacer este programa:
 - Dar la respuesta a la pregunta planteada del problema dado.
 - Encontrar la solución escribiendo el planteamiento algebráico.
+- Aplicar el procedimiento a tableaus demasiado grande (+25x25 aproximadamente).
 
 ## ¿Cómo debo iniciar? 
 
-Una vez tenga el problema a solucionar, debes buscar la manera de plantearlo, existen distintos tipos de problemas y cada uno tiene una "plantilla" para poderse guiar, posteriormente debe generar su tableu inicial, esto es lo más importante pues un tableu mal planteado hará que no se encuentre un resultado, o que el resultado no sea satisfactorio. A continuación, se ejemplificarán todos los pasos con un procedimiento sencillo.
+Una vez tenga el problema a solucionar, debes buscar la manera de plantearlo, existen distintos tipos de problemas y cada uno tiene una "plantilla" para poderse guiar, posteriormente debe generar su tableau inicial, esto es lo más importante pues un tableau mal planteado hará que no se encuentre un resultado, o que el resultado no sea satisfactorio. A continuación, se ejemplificarán todos los pasos con un procedimiento sencillo.
 
 ### Planteamiento del problema.
 
@@ -51,16 +52,16 @@ Lo que sigue es plantear las restricciones, en este caso, podemos ver que nuestr
 
 Esta última restricción es bastante obvia puesto que, en el mundo real, no podemos tener juguetes negativos.
 
-### Plantear mi tableu.
+### Plantear mi tableau.
 
-Estamos llegando a la recta final, lo que sigue ahora es realizar el tableu, el cual es una representación en forma de tabla de nuestro problema. Para poder plantearlo debemos partir de despejar nuestras ecuaciones de forma que las *variables de decisión* queden del lado izquierdo de la desigualdad, mientras que para la función objetivo $Z$ cambiaremos de signo todos sus valores:
+Estamos llegando a la recta final, lo que sigue ahora es realizar el tableau, el cual es una representación en forma de tabla de nuestro problema. Para poder plantearlo debemos partir de despejar nuestras ecuaciones de forma que las *variables de decisión* queden del lado izquierdo de la desigualdad, mientras que para la función objetivo $Z$ cambiaremos de signo todos sus valores:
 
 - $Y_1: X_1 + 2 X_2 + X_3 \leq 430$
 - $Y_2: 3 X_1 + 0 X_2 + 2 X_3 \leq 460$ 
 - $Y_3: X_1 + 4 X_2 + 0 X_3 \leq 420$
 - $Maximizar~Z: -3 X_1 - 2 X_2 - 5 X_3 = 0 $
 
-Lo que hace que nuestro **tableu** quede de la siguiente forma:
+Lo que hace que nuestro **tableau** quede de la siguiente forma:
 
 |       | $-X_1$ | $-X_2$ | $-X_3$ | Sol. |
 | ----- | ------ | ------ | ------ | ---- |
@@ -71,9 +72,9 @@ Lo que hace que nuestro **tableu** quede de la siguiente forma:
 
 ### Y ahora... ¿cómo lo resulevo?
 
-Aquí es donde entra el programa que ha descargado, está claro que la mayor parte del trabajo aún está en sus manos, sin embargo, gracias a este software puede ahorrarse la molestia de resolver este tableu. La solución es encontrada por la reducción de Jordan, un procedimiento que, si bien, no es complejo, puede llegar a ser tedioso, así que transformemos esto en algo que el programa pueda interpretar.
+Aquí es donde entra el programa que ha descargado, está claro que la mayor parte del trabajo aún está en sus manos, sin embargo, gracias a este software puede ahorrarse la molestia de resolver este tableau. La solución es encontrada por la reducción de Jordan, un procedimiento que, si bien, no es complejo, puede llegar a ser tedioso, así que transformemos esto en algo que el programa pueda interpretar.
 
-#### Convertir mi tableu a datos separados por comas.
+#### Convertir mi tableau a datos separados por comas.
 
 La forma más rápida de tener información que el programa puede interpretar es escribiendo los datos como una cadena separada por comas y punto y coma, la coma indica un cambio de celda, mientras que el punto y coma indica un salto de fila, así es como llegamos a la siguiente cadena de texto:
 ``` 1, 2, 1, 430; 3, 0, 2, 460; 1, 4, 0, 420; -3, -2, -5, 0 ```
@@ -105,7 +106,7 @@ Una vez tenga su información lista, abra el programa y lo primero que podrá ob
 - Número máximo de iteraciones (indicar un entero positivo): Le indica al programa cuando debe detenerse, usualemente no se requieren muchas iteraciones para un problema con pocas variables, pero esto puede cambiar en planteamientos con muchas, elija de acuerdo a la magnitud de su problema, aún si pone 0 el programa realizará la primera iteración.
 - Número de decimales (indicar un entero positivo): Si sus resultados serán representados con decimales, puede elegir cuantas de estas serán mostradas, no nos gustaría ver un resultado con más decimales que números, ¿cierto?
 - ¿Se usan fracciones? (casilla marcable): marcar esta casilla hará que sus resultados y datos se muestren e interpreten como fracciones, ¡recuerde las reglas!
-- Mostrar todas las iteraciones (casilla marcable): si quiere ver paso a paso como se resuelve su tableu entonces marque esta casilla, solo recuerde que podría resultar en algo muy largo.
+- Mostrar todas las iteraciones (casilla marcable): si quiere ver paso a paso como se resuelve su tableau entonces marque esta casilla, solo recuerde que podría resultar en algo muy largo.
 - Los últimos botones se explicarán con más profundidad a continuación.
 
 #### Elegir un archivo CSV.
@@ -171,7 +172,7 @@ $$4x-y \leq 10$$
 
 $$x,y \geq 0$$
 
-Usando $Min~Z=-4X_1+2X_2 = -Max(Z') = 4X_1-2X_2$ se resuelve el problema de maximizar la función objetivo $Z'$. El tableu inicial será de la siguiente forma:
+Usando $Min~Z=-4X_1+2X_2 = -Max(Z') = 4X_1-2X_2$ se resuelve el problema de maximizar la función objetivo $Z'$. El tableau inicial será de la siguiente forma:
 
 |     |$X_1$|$X_2$| sol |
 |-----|-----|-----|-----|
@@ -179,11 +180,11 @@ Usando $Min~Z=-4X_1+2X_2 = -Max(Z') = 4X_1-2X_2$ se resuelve el problema de maxi
 |$Y_2$|$4$  |$-1$ |$10$ |
 |$Z$  |$-4$  |$2$ | $0$ |
 
-Al final, la función objetivo se presenta en el tableu con $-4,2$, esto porque al plantear el tableu se cambia el signo de estos coeficientes. Finalmente podemos introducir los siguientes datos al programa:
+Al final, la función objetivo se presenta en el tableau con $-4,2$, esto porque al plantear el tableau se cambia el signo de estos coeficientes. Finalmente podemos introducir los siguientes datos al programa:
 
 ```-1, 3, 14; 4, -1, 10; -4, 2, 0```
 
-Lo que nos deja con el siguiente tableu final:
+Lo que nos deja con el siguiente tableau final:
 
 ![ej 2 solucion](image-7.png)
 
@@ -222,9 +223,9 @@ Sujeto a:
 - Nodo 10: $-X_{910}=-1$
 - $X_i \geq 0$
 
-Se tiene el siguiente tableu ya puesto en un archivo CSV, en este caso, visualizado con Excel.
+Se tiene el siguiente tableau ya puesto en un archivo CSV, en este caso, visualizado con Excel.
 
-![tableu ej3](image-4.png)
+![tableau ej3](image-4.png)
 
 Finalmente, se abre este archivo con el programa y al iniciar se obtiene el siguiente resultado:
 
