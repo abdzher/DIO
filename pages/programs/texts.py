@@ -5,18 +5,18 @@ class Dialog():
         self.info1_info = """
 Este programa está destinado a ilustrar de la mejor manera posible la solución de 
 poblemas de optimización llevando a cabo un simple pero efectivo algoritmo algebráico, 
-siempre partiendo del primer tableu del que parte el problema.
+siempre partiendo del primer tableau del que parte el problema.
 
-A continuación se presentan las herramientas con las que puede resolver su tableu
+A continuación se presentan las herramientas con las que puede resolver su tableau
 inicial. Si no tiene uno, revise la guía rápida para obtener rápidamente el suyo.
         """
-        self.ext_welcome = "Bienvenido al solucionador de tableus! Con este programa podras obtener los tableus intermedios y finales de tu problema por solucionar con el metodo simplex."
-        self.ext_inst1 = "A continuacion, introduce los datos de tu tableu o elige un archivo csv para iniciar."
+        self.ext_welcome = "Bienvenido al solucionador de tableaus! Con este programa podras obtener los tableaus intermedios y finales de tu problema por solucionar con el metodo simplex."
+        self.ext_inst1 = "A continuacion, introduce los datos de tu tableau o elige un archivo csv para iniciar."
 
         self.comma_dial_title = "Añadir datos separados con comas y punto y coma"
         self.comma_info_title = "Ayuda para introducir datos"
         self.comma_info_text = """
-En el recuadro anterior puede escribir su tableu indicando con la coma un cambio 
+En el recuadro anterior puede escribir su tableau indicando con la coma un cambio 
 de celda, mientras que el punto y coma indica un salto de fila, por ejemplo:
 
 1, 2, 1, 430; 3, 0, 2, 460; 1, 4, 0, 420; -3, -2, -5, 0
@@ -37,7 +37,7 @@ Se le pedirá elegir un archivo que debe ser estríctamente una tabla CSV. En la
 celdas pueden escribirse números y negativos con el guión corto "-",
 decimales con un punto o fracciones con un diagonal (5/9).
 
-El tableu debe estar ubicado en el inicio de la tabla y puede el archivo puede
+El tableau debe estar ubicado en el inicio de la tabla y puede el archivo puede
 ser modificado con excel pero teniendo cuidado del formato en que se guarda,
 para más información revisar el documento de ayuda.
         """

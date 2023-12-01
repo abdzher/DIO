@@ -177,7 +177,7 @@ class Data():
             self.m = self.shape[0] - 1
             self.n = self.shape[1] - 1
             self.log.append(ft.Text("El proceso será iniciado", size=18, selectable=True))
-            self.log.append(ft.Text(f"El tamaño de la matriz es de {self.m+1}x{self.n+1}, y su tableu inicial es el siguiente:", size=14, selectable=True))
+            self.log.append(ft.Text(f"El tamaño de la matriz es de {self.m+1}x{self.n+1}, y su tableau inicial es el siguiente:", size=14, selectable=True))
             
             # Get dataframe with data and cols, rows names
             if self.type == "csv" or self.type == "comma":
@@ -317,7 +317,7 @@ class Data():
         if error == "alreadysolution":
             wtext = "Advertencia: Los valores positivos en la ultima fila\nindican que no es necesario buscar solucion."
         elif error == "allneg":
-            wtext = "Advertencia: Todos los valores en la columna son negativos,\nrevisar que el despeje para el tableu sea correcto."
+            wtext = "Advertencia: Todos los valores en la columna son negativos,\nrevisar que el despeje para el tableau sea correcto."
         return ft.Text(
             wtext,
             max_lines=2,

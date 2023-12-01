@@ -35,7 +35,9 @@ async def main(page: ft.Page):
             
     
     async def show_window_changes(e: ft.ControlEvent):
+        prog_bar_column.width = page.window_width
         main_page.width = page.window_width
+        prog_bar_column.height = page.window_height - 100
         main_page.height = page.window_height - 100
         print(page.window_width, page.window_height)
         print(main_page.width, main_page.height)
@@ -120,6 +122,14 @@ async def main(page: ft.Page):
     # ======= START FUNCTIONS
     async def start_press(e):
         prog_bar_column.controls.clear()
+        """
+        try:
+            main_page.controls.remove(finalrow)
+        except:
+            pass
+        else:
+            pass
+        """
         await page.update_async()
         prog_bar_column.height = 45
         prog_bar_column.controls.append(ft.Text("Se esta procesando su informacion"))
@@ -138,7 +148,17 @@ async def main(page: ft.Page):
             controls = await data.solve()
             #print(controls)
             prog_bar_column.controls.extend(controls)
-            prog_bar_column.height = page.window_height - 150
+            """
+            finalrow = ft.Row([ft.Column(
+                controls = controls,
+                scroll= ft.ScrollMode.AUTO
+            )], scroll= ft.ScrollMode.AUTO
+                              )
+            prog_bar_column.controls.append(finalrow)
+            """
+            #main_page.controls.append(finalrow)
+            #main_page.controls.extend(controls)
+            prog_bar_column.height = page.window_height - 100
             await page.update_async()
             ##############################################################################
             # -2, 1, 2 ; -3, 4, 12; 0 , 1, 6 ; 3 ,-1, 21 ; 3 ,-1, 5 ; 3 ,-6, 0
@@ -244,7 +264,7 @@ async def main(page: ft.Page):
         leading = ft.Icon(ft.icons.TABLE_CHART),
         #leading= ft.Image(src = "icon.ico"),
         leading_width=50,
-        title = ft.Text("DIO: Tableu Solver"),
+        title = ft.Text("DIO: Tableau Solver"),
         bgcolor = ft.colors.LIGHT_BLUE_700
     )
     
@@ -432,17 +452,20 @@ async def main(page: ft.Page):
     # ======== PROGRESS BAR =====
 
     prog_bar_column = ft.Column(
-        height = 0,
-        width = page.window_width,
-        horizontal_alignment = ft.CrossAxisAlignment.CENTER,
-        scroll = ft.ScrollMode.ALWAYS,
-        
+            height = 0,
+            width = page.window_width,
+            horizontal_alignment = ft.CrossAxisAlignment.CENTER,
+            scroll = ft.ScrollMode.ALWAYS, 
+        )
+    
+            
+    prog_bar_row = ft.Row(
+        [prog_bar_column],
+        scroll= ft.ScrollMode.ALWAYS
     )
     
-    
-    
     # ========= DEFINITION =======
-    main_page_elements = [welcome_text, row2, row3, prog_bar_column]
+    main_page_elements = [welcome_text, row2, row3, prog_bar_row]
     
     main_page = ft.Column(
         controls = main_page_elements,
